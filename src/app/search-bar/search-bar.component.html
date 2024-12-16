@@ -1,3 +1,12 @@
-<form (submit)="onFormSubmit($event)">
-  <input (input)="onInput($event)" />
-</form>
+<nav class="navbar bg-primary" data-bs-theme="">
+  <div class="container">
+    <form (submit)="onFormSubmit($event)" class="d-flex w-100" role="search">
+      <input
+        (input)="onInput($event)"
+        class="form-control w-100"
+        placeholder="Search"
+        type="search"
+      />
+    </form>
+  </div>
+</nav>
