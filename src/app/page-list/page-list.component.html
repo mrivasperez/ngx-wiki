@@ -1,1 +1,7 @@
-{{ pages.length }}
+@for (page of pages; track page.title) {
+<div>
+  <p>{{ page.title }}</p>
+  <pre>{{ page.wordcount }}</pre>
+  <p>{{ page.snippet }}</p>
+</div>
+}

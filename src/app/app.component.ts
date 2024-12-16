@@ -17,7 +17,9 @@ export class AppComponent {
 
   onTerm(term: string) {
     this.wikipedia.search(term).subscribe((res: any) => {
+      console.log(res)
       this.pages = res.query.search;
+      console.log(res.query.search);
     });
   }
 }
