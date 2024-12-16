@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { PageListComponent } from './page-list/page-list.component';
+import { WikipediaService } from './wikipedia.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,12 @@ import { PageListComponent } from './page-list/page-list.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  constructor(private wikipedia: WikipediaService) {}
+
   title = 'ngx-wiki';
-  onTerm(event: string) {
-    console.log(event);
-    // const value = (event as EventEmitter<string>)
+
+  onTerm(term: string) {
+    const results = this.wikipedia.search(term);
+    console.log(results)
   }
 }
