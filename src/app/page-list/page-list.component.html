@@ -1,7 +1,9 @@
 @for (page of pages; track page.title) {
 <div>
-  <p>{{ page.title }}</p>
-  <pre>{{ page.wordcount }}</pre>
-  <p>{{ page.snippet }}</p>
+  <p>
+    <a [href]="'https://en.wikipedia.org/?curid=' + page.pageid">{{ page.title }}</a>
+  </p>
+  <p>{{ page.wordcount }}</p>
+  <p [innerHTML]="page.snippet"></p>
 </div>
 }
