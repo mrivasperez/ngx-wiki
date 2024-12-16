@@ -10,12 +10,14 @@ import { WikipediaService } from './wikipedia.service';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  pages = [];
   constructor(private wikipedia: WikipediaService) {}
 
   title = 'ngx-wiki';
 
   onTerm(term: string) {
-    const results = this.wikipedia.search(term);
-    console.log(results)
+    this.wikipedia.search(term).subscribe((res: any) => {
+      this.pages = res.query.search;
+    });
   }
 }
