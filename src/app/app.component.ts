@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { PageListComponent } from './page-list/page-list.component';
 
@@ -11,4 +10,8 @@ import { PageListComponent } from './page-list/page-list.component';
 })
 export class AppComponent {
   title = 'ngx-wiki';
+  onTerm(event: string) {
+    console.log(event);
+    // const value = (event as EventEmitter<string>)
+  }
 }
