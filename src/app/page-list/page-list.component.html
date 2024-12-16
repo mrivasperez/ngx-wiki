@@ -1,9 +1,12 @@
-@for (page of pages; track page.title) {
-<div>
-  <p>
-    <a [href]="'https://en.wikipedia.org/?curid=' + page.pageid">{{ page.title }}</a>
-  </p>
-  <p>{{ page.wordcount }}</p>
-  <p [innerHTML]="page.snippet"></p>
+<div class="container mt-3">
+  @for (page of pages; track page.title) {
+  <div class="w-100 border border-primary my-2">
+    <a
+      [href]="'https://en.wikipedia.org/?curid=' + page.pageid"
+      class="bg-primary-subtle d-block text-primary-emphasis p-2 lead fw-normal"
+      >{{ page.title }}</a
+    >
+    <p [innerHTML]="page.snippet" class="p-2"></p>
+  </div>
+  }
 </div>
-}
